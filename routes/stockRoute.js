@@ -50,8 +50,8 @@ router.patch('/:sku', async (req, res) => {
     const product = await Stock.findOne({sku: req.params.sku})
     if (!product) return res.status(404).json({error: 'product not found'})
 
-    const {name, age, quantity} = req.body
-    const updatedProductData = { name, age, quantity }
+    const {name, quantity} = req.body
+    const updatedProductData = { name, quantity }
     await product.updateOne({sku: req.params.sku}, updatedProductData)
 
     return res.status(200).json(updatedProductData)
