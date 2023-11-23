@@ -13,6 +13,10 @@ const Stock = mongoose.model('Stock', {
     quantity: {
         type: Number,
         required: true
+    },
+    threshHoldQuantity: {
+        type: Number,
+        required: true
     }
 })
 

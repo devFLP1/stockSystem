@@ -11,7 +11,7 @@ app.use(
 
 app.use(express.json())
 
-const stockRoutes = require('./routes/stockRoute')
+const stockRoutes = require('./src/routes/stockRoute');
 app.use('/stock', stockRoutes)
 
 mongoose.connect(`mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASSWORD}@apicluster.zkflsc8.mongodb.net/`)
